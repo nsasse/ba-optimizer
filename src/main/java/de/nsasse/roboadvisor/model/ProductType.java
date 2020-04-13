@@ -1,4 +1,4 @@
-package de.nsasse.microadvisor.model;
+package de.nsasse.roboadvisor.model;
 
 import java.io.Serializable;
 
