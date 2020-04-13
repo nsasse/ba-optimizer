@@ -2,14 +2,11 @@ package de.nsasse.roboadvisor.controller;
 
 import de.nsasse.roboadvisor.service.RestService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
-
 @Component
-@RequestScoped
-@ManagedBean
+@Scope(value = "request")
 public class OptimizerBean {
 
     @Autowired
