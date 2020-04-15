@@ -1,15 +1,30 @@
 package de.nsasse.roboadvisor.controller;
 
+import de.nsasse.roboadvisor.model.Product;
+import de.nsasse.roboadvisor.service.RestService;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 
+//@RestController
+//@RequestMapping("/optimizer")
 @Named
 public class OptimizerController {
 
-    @Inject
-    OptimizerController optimizerController;
+//    @CrossOrigin
+//    @GetMapping
+//    public Product getOptimalProduct() {
+//        return null;
+//    }
 
-    private String productName;
+    @Inject
+    RestService restService;
+
+    private String productName = "TestProdName";
 
     public String getProductName() {
         return productName;
@@ -20,6 +35,8 @@ public class OptimizerController {
     }
 
     public void printProductName() {
+        restService.getProducts();
         System.out.println(this.productName);
     }
+
 }
