@@ -1,18 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xml:lang="en" lang="en"
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 <head>
-    <title>Optimizer</title>
+    <title>Landing Page</title>
 </head>
 <h:body>
-    BodyTest
-    <h:form id="form">
-        <h1>Spring Boot + JSF</h1>
-        <h:outputText value="#{optimizerBean.string}"/>
-        <h:outputText value="PLAINTEXTTEST"/>
-        <h:commandButton value="#{optimizerBean.string}"/>
+    my app is running
+
+    <h:form id="myFirstForm">
+        some simple text in form<br/>
+        <h:inputText value="#{optimizerController.productName}"/>
+        <h:commandButton actionListener="#{optimizerController.printProductName()}"/>
     </h:form>
+
 </h:body>
 </html>

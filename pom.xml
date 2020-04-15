@@ -14,6 +14,7 @@
     <groupId>de.nsasse.microadvisor</groupId>
     <artifactId>optimizer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <properties>
         <java.version>1.10</java.version>
@@ -42,8 +43,9 @@
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
@@ -54,6 +56,21 @@
             <groupId>com.sun.el</groupId>
             <artifactId>el-ri</artifactId>
             <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.faces</groupId>
+            <artifactId>jsf-api</artifactId>
+            <version>2.2.20</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.faces</groupId>
+            <artifactId>jsf-impl</artifactId>
+            <version>2.2.20</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
         </dependency>
     </dependencies>
 
@@ -67,9 +84,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <configuration>
-                    <webXml>WebContent\WEB-INF\web.xml</webXml>
-                </configuration>
+                <version>3.2.2</version>
+                <!--                <configuration>-->
+                <!--                    <webXml>WebContent\WEB-INF\web.xml</webXml>-->
+                <!--                </configuration>-->
             </plugin>
         </plugins>
     </build>
