@@ -19,11 +19,11 @@ public class ProductType implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
+    public String getType() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setType(String name) {
         this.name = name;
     }
 }

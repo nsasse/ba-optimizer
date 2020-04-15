@@ -2,15 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 <head>
-    <title>Landing Page</title>
+    <title>Optimizer</title>
 </head>
 <h:body>
-    my app is running
+    <h1>JavaServer Faces</h1>
 
     <h:form id="myFirstForm">
         some simple text in form<br/>
-        <h:inputText value="#{optimizerController.productName}"/>
-        <h:commandButton actionListener="#{optimizerController.printProductName()}"/>
+        <h:commandButton value="Produkte anzeigen" actionListener="#{optimizerController.getProducts}"/>
+        <h:outputText value="#{optimizerController.productList.get(0).name}"/>
+        <h:outputText value="#{optimizerController.productList.get(0).isin}"/>
+        <h:outputText value="#{optimizerController.productList.get(0).indexLevel}"/>
+        <h:outputText value="#{optimizerController.productList.get(0).performanceThisYear}"/>
     </h:form>
 
 </h:body>
