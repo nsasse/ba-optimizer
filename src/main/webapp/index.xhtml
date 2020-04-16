@@ -1,19 +1,29 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 <head>
     <title>Optimizer</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300" rel="stylesheet"/>
 </head>
 <h:body>
     <h1>JavaServer Faces</h1>
 
     <h:form id="myFirstForm">
-        some simple text in form<br/>
-        <h:commandButton value="Produkte anzeigen" actionListener="#{optimizerController.getProducts}"/>
-        <h:outputText value="#{optimizerController.productList.get(0).name}"/>
-        <h:outputText value="#{optimizerController.productList.get(0).isin}"/>
-        <h:outputText value="#{optimizerController.productList.get(0).indexLevel}"/>
-        <h:outputText value="#{optimizerController.productList.get(0).performanceThisYear}"/>
+        <p:dataTable id="products" value="#{optimizerController.productList}" var="product">
+            <p:column headerText="Name">
+                <p:outputLabel value="#{product.name}"/>
+            </p:column>
+            <p:column headerText="Rendite 01.01">
+                <p:outputLabel value="#{product.performanceThisYear}"/>
+            </p:column>
+            <p:column headerText="Hinzufügen">
+                <p:commandButton value="+" action="#{optimizerController.addProductToPortfolio(product.isin)}"
+                                 update="@none"/>
+            </p:column>
+        </p:dataTable>
+
     </h:form>
 
 </h:body>
