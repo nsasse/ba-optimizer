@@ -8,17 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300" rel="stylesheet"/>
 </head>
 <h:body>
-    <h1>JavaServer Faces</h1>
-
+    <h3>Produktempfehlungen</h3>
     <h:form id="myFirstForm">
         <p:dataTable id="products" value="#{optimizerController.productList}" var="product">
             <p:column headerText="Name">
                 <p:outputLabel value="#{product.name}"/>
             </p:column>
-            <p:column headerText="Rendite 01.01">
-                <p:outputLabel value="#{product.performanceThisYear}"/>
+            <p:column headerText="Rendite" style="width:60px">
+                <p:outputLabel value="#{product.performanceThisYear} %"/>
             </p:column>
-            <p:column headerText="Hinzufügen">
+            <p:column>
                 <p:commandButton value="+" action="#{optimizerController.addProductToPortfolio(product.isin)}"
                                  update="@none"/>
             </p:column>
