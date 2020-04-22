@@ -18,8 +18,10 @@
                 <p:outputLabel value="#{product.performanceThisYear} %"/>
             </p:column>
             <p:column>
-                <p:commandButton value="+" action="#{optimizerController.addProductToPortfolio(product.isin)}"
-                                 update="@none"/>
+                <p:commandButton styleClass="angular-button" value="+"
+                                 action="#{optimizerController.addProductToPortfolio(product.isin)}"
+                                 update="@none"
+                                 style="font-size: 14px; font-weight: 500; border: 0px; background-color: #E5E5E5"/>
             </p:column>
         </p:dataTable>
 
