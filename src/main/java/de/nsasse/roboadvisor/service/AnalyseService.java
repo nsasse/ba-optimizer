@@ -13,9 +13,4 @@ public class AnalyseService {
                 .sorted(Comparator.comparing(Product::getPerformanceThisYear).reversed())
                 .collect(Collectors.toList());
     }
-
-    public List<Product> getOptimalPortfolioProducts(List<Product> productList) {
-        //TODO
-        return null;
-    }
 }
